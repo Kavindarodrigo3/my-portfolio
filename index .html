@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Kavinda.dev — Cybersecurity Student Portfolio</title>
+<meta name="description" content="Portfolio of a cybersecurity student — ethical hacking, SOC analysis, network security, Python tooling." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Orbitron:wght@500;700;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<!-- ===== Animated background ===== -->
+<canvas id="matrix"></canvas>
+<div class="mouse-glow" id="mouseGlow"></div>
+
+<!-- ===== Navbar ===== -->
+<header class="navbar glass">
+  <a href="#home" class="logo">
+    <span class="logo-icon">🛡️</span>
+    <span class="logo-text">Kavinda.dev</span>
+  </a>
+  <nav class="nav-links" id="navLinks">
+    <a href="#home">$ Home</a>
+    <a href="#about">$ About</a>
+    <a href="#skills">$ Skills</a>
+    <a href="#projects">$ Projects</a>
+    <a href="#blog">$ Blog</a>
+    <a href="#contact">$ Contact</a>
+  </nav>
+  <div class="nav-actions">
+    <button class="icon-btn" id="searchBtn" aria-label="Search">🔍</button>
+    <button class="icon-btn" id="themeBtn" aria-label="Theme">🌙</button>
+    <button class="btn-ghost" id="loginBtn">Login</button>
+    <button class="btn-primary" id="signupBtn">Sign Up</button>
+    <button class="icon-btn menu-toggle" id="menuToggle">☰</button>
+  </div>
+</header>
+
+<!-- ===== Hero ===== -->
+<section class="hero" id="home">
+  <div class="hero-grid"></div>
+  <div class="hero-content">
+    <p class="terminal-line">root@cypher:~$ <span class="typing" id="typed"></span><span class="cursor">_</span></p>
+    <h1>Hi, I'm <span class="gradient-text">Kavinda Rodrigo</span></h1>
+    <h2 class="subtitle">Cybersecurity Student · Ethical Hacker · SOC Analyst</h2>
+    <p class="hero-desc">Breaking systems to make them safer. Passionate about penetration testing, threat hunting, and building blue-team automation.</p>
+    <div class="hero-cta">
+      <a href="#projects" class="btn-primary">./view-projects</a>
+      <a href="#contact" class="btn-outline">./contact-me</a>
+    </div>
+    <div class="stats">
+      <div><b>120+</b><span>CTFs Solved</span></div>
+      <div><b>30+</b><span>Projects</span></div>
+      <div><b>15+</b><span>Certifications</span></div>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="floating-card glass">
+      <div class="card-header"><span></span><span></span><span></span> terminal.sh</div>
+      <pre class="code">
+<span class="c-key">$</span> nmap -sV target.local
+<span class="c-out">Discovered open ports:</span>
+<span class="c-out">22/tcp  ssh   OpenSSH 8.9</span>
+<span class="c-out">80/tcp  http  nginx 1.22</span>
+<span class="c-out">443/tcp https nginx 1.22</span>
+<span class="c-key">$</span> ./exploit --safe-mode
+<span class="c-ok">[+] Vulnerability identified</span>
+<span class="c-ok">[+] Reported to vendor ✔</span>
+      </pre>
+    </div>
+  </div>
+</section>
+
+<!-- ===== About ===== -->
+<section class="section" id="about">
+  <h2 class="section-title">// About Me</h2>
+  <div class="about-grid">
+    <div class="glass card about-card">
+      <h3>Who am I?</h3>
+      <p>I'm a 1st year Cybersecurity student specializing in offensive security and SOC operations. I build labs, hunt vulnerabilities, and write security automation in Python.</p>
+      <ul class="info-list">
+        <li><b>Location:</b> Colombo,Srilanka</li>
+        <li><b>Education:</b> Bachelor of Science (Honors) Information Technology in Cyber Security</li>
+        <li><b>Email:</b> kavindarodrigo1@gmail.com</li>
+        <li><b>Status:</b> <span class="badge online">Available for internships</span></li>
+      </ul>
+    </div>
+    <div class="glass card about-card">
+      <h3>Timeline</h3>
+      <ul class="timeline">
+        <li><b>2026</b> — ISO/IEC 27001:2022 Lead Auditor</li>
+        <li><b>2025</b> — Started Bsc in Cyber Security </li>
+        <li><b>2025</b> — Diploma in Network Administration</li>
+        <li><b>2024</b> — Diploma in Cyber security</li>
+        <li><b>2024</b> — Cisco Ethical Hacker </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Skills ===== -->
+<section class="section" id="skills">
+  <h2 class="section-title">// Skills</h2>
+  <div class="skills-grid" id="skillsGrid"></div>
+</section>
+
+<!-- ===== Projects ===== -->
+<section class="section" id="projects">
+  <h2 class="section-title">// Projects</h2>
+  <div class="projects-grid" id="projectsGrid"></div>
+</section>
+
+<!-- ===== Blog ===== -->
+<section class="section" id="blog">
+  <h2 class="section-title">// Blog</h2>
+  <div class="blog-grid" id="blogGrid"></div>
+</section>
+
+<!-- ===== Contact + Map ===== -->
+<section class="section" id="contact">
+  <h2 class="section-title">// Contact</h2>
+  <div class="contact-grid">
+    <form class="glass card contact-form" id="contactForm">
+      <h3>Send a transmission</h3>
+      <label>Name<input type="text" required placeholder="Your name" /></label>
+      <label>Email<input type="email" required placeholder="you@domain.com" /></label>
+      <label>Message<textarea required rows="4" placeholder="Your message..."></textarea></label>
+      <button class="btn-primary" type="submit">Transmit →</button>
+      <p class="form-status" id="formStatus"></p>
+    </form>
+    <div class="glass card map-card">
+      <h3>📍 Find me</h3>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63398.588279773205!2d80.02368645241869!3d6.719503628671647!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae24b475a084f91%3A0xf0beeaf3b66bd8be!2sHorana!5e0!3m2!1sen!2slk!4v1778788755162!5m2!1sen!2slk" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <p class="map-info">Horana, Kaluthara,Sri lanka</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Footer ===== -->
+<footer class="footer">
+        <div class="glass card map-card">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>CYBERALEX</h3>
+                    <p>Future-ready cybersecurity professional</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <div class="link-group">
+                        <a href="#projects">Projects</a>
+                        <a href="#skills">Skills</a>
+                        <a href="#certs">Certifications</a>
+                    </div>
+                </div>
+                <div class="social-links">
+                    <h4>Connect</h4>
+                    <div class="social-icons">
+                        <a href="https://github.com/kavindarodrigo" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                        <a href="https://linkedin.com/in/kavindarodrigo" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                            <i class="fa-brands fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)">
+                            <i class="fa-brands fa-x-twitter"></i>
+                        </a>
+                        <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                        <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Discord">
+                            <i class="fa-brands fa-discord"></i>
+                        </a>
+                        <a href="mailto:kavindarodrigo1@gmail.com" aria-label="Email">
+                            <i class="fa-solid fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Kavinda Rodrigo.  All rights reserved.</p>
+                <button class="back-to-top" onclick="scrollToTop()">
+                    <i class="fas fa-chevron-up"></i>
+                </button>
+            </div>
+        </div>
+    </footer>
+
+<!-- ===== Search Modal ===== -->
+<div class="modal" id="searchModal">
+  <div class="modal-content glass">
+    <div class="modal-head">
+      <span class="text-neon">$ search --all</span>
+      <button class="icon-btn" data-close>✕</button>
+    </div>
+    <input type="text" id="searchInput" placeholder="Search projects, skills, blog..." />
+    <ul id="searchResults" class="search-results"></ul>
+  </div>
+</div>
+
+<!-- ===== Login Modal ===== -->
+<div class="modal" id="loginModal">
+  <div class="modal-content glass auth-modal">
+    <div class="modal-head"><span class="text-neon">$ ./login --secure</span><button class="icon-btn" data-close>✕</button></div>
+    <form class="auth-form" data-auth="login">
+      <label>Email<input type="email" required placeholder="operator@cypher.dev"/></label>
+      <label>Password<input type="password" required placeholder="••••••••"/></label>
+      <button class="btn-primary" type="submit">./login</button>
+      <p class="muted">No account? <a href="#" id="toSignup">./signup</a></p>
+    </form>
+  </div>
+</div>
+
+<!-- ===== Signup Modal ===== -->
+<div class="modal" id="signupModal">
+  <div class="modal-content glass auth-modal">
+    <div class="modal-head"><span class="text-neon">$ useradd --secure</span><button class="icon-btn" data-close>✕</button></div>
+    <form class="auth-form" data-auth="signup">
+      <label>Handle<input type="text" required placeholder="r00t.alex"/></label>
+      <label>Email<input type="email" required placeholder="you@domain.com"/></label>
+      <label>Password<input type="password" required placeholder="strong passphrase"/></label>
+      <button class="btn-primary" type="submit">./create-account</button>
+      <p class="muted">Already have access? <a href="#" id="toLogin">./login</a></p>
+    </form>
+  </div>
+</div>
+
+<!-- ===== Chatbot ===== -->
+<button class="chatbot-btn" id="chatbotBtn" aria-label="Chatbot">🤖</button>
+<div class="chatbot glass" id="chatbot">
+  <div class="chatbot-head">
+    <span class="text-neon">Kavinda's_assistant</span>
+    <button class="icon-btn" id="chatbotClose">✕</button>
+  </div>
+  <div class="chatbot-msgs" id="chatMsgs"></div>
+  <div class="chatbot-presets" id="chatPresets"></div>
+  <form class="chatbot-input" id="chatForm">
+    <input type="text" id="chatInput" placeholder="ask something..." />
+    <button class="btn-primary" type="submit">→</button>
+  </form>
+</div>
+
+<!-- ===== Toast ===== -->
+<div class="toast" id="toast"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
